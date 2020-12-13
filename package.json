@@ -1,0 +1,19 @@
+{
+  "name": "ui5-sdk-browser",
+  "version": "1.0.0",
+  "description": "A simple exe to browse Local SAP/OPENUI5 SDK. ",
+  "main": "index.js",
+  "repository": "https://github.com/babuilyas/ui5-sdk-browser.git",
+  "author": "Muhammad Ilyas",
+  "license": "MIT",
+  "scripts": {
+    "start" : "node index.js",
+    "publish": "nexe index.js --sourceUri C:\\Users\\m.ilyas\\Downloads\\Compressed\\node-v12.20.0.tar.gz --build"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "get-port": "^5.1.1",
+    "node-static": "^0.7.11",
+    "open": "^7.3.0"
+  }
+}
