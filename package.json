@@ -7,13 +7,16 @@
   "author": "Muhammad Ilyas",
   "license": "MIT",
   "scripts": {
-    "start" : "node index.js",
-    "publish": "nexe index.js --sourceUri C:\\Users\\m.ilyas\\Downloads\\Compressed\\node-v12.20.0.tar.gz --build"
+    "start": "node index.js",
+    "build-win64": "nexe index.js -t x64-12.0.0",
+    "build-win64-fs": "nexe index.js --ico favicon.ico -t x64-12.0.0 --build"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "get-port": "^5.1.1",
     "node-static": "^0.7.11",
     "open": "^7.3.0"
+  },
+  "devDependencies": {
+    "nexe": "^3.3.7"
   }
 }

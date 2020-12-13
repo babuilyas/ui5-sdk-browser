@@ -1,22 +1,17 @@
-const express = require('express');
-const app = express();
-const getPort = require('get-port');
+var http = require('http');
+var nStatic = require('node-static');
 const open = require('open');
 const fs = require('fs');
+const getPort = require('get-port');
 
-app.use(express.static('./'));
-
-app.get('/', (req, res) => {
-    if(fs.existsSync(__dirname + '/index.html'))
-    res.sendFile( __dirname + '/index.html');
-    else
-    res.sendFile( __dirname + '/test.html');
-});
+var fileServer = new nStatic.Server('./');
 
 (async ()=>{
 const port = await getPort({port: 3000});
 
-await app.listen(port,()=>{       
+http.createServer(function (req, res) {    
+    fileServer.serve(req, res);
+}).listen(port,()=>{       
     console.log(`server listening at http://localhost:${port}`);
 });
 
