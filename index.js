@@ -7,7 +7,7 @@ const getPort = require('get-port');
 var fileServer = new nStatic.Server('./');
 
 (async ()=>{
-const port = await getPort({port: 3000});
+const port = await getPort({port: 45927});
 
 http.createServer(function (req, res) {    
     fileServer.serve(req, res);
